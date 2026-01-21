@@ -3,3 +3,4 @@ skrub
 pandas
 numpy
 streamlit
+matplotlib
