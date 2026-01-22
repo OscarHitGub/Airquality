@@ -234,7 +234,9 @@ if App_selection == "Training data":
         st.pyplot(fig)
         
         st.text(
-            "Er is geen duidelijk verband zichtbaar tussen de temperatuur en de luchtkwaliteit."
+            "Er is geen duidelijk verband zichtbaar tussen de temperatuur en de luchtkwaliteit.",
+            text_alignment="center",
+            width="stretch"
         )
 
     if scatterselect == "Regen":
@@ -287,7 +289,9 @@ if App_selection == "Training data":
         st.pyplot(fig)
         
         st.text(
-            "Bij een hogere windkracht is de luchtkwaliteit gemiddeld beter."
+            "Bij een hogere windkracht is de luchtkwaliteit gemiddeld beter.",
+            text_alignment="center",
+            width="stretch"
         )
 
     st.divider()
@@ -309,7 +313,8 @@ if App_selection == "Training data":
     
     st.text(
         "De verdeling van luchtkwaliteit verschilt tussen de dag en de nacht.",
-        text_alignment="center"
+        text_alignment="center",
+        width="stretch"
     )
 
 if App_selection == "Model omschrijving":
@@ -512,6 +517,7 @@ Ook hier kan een voorspelling van *matige luchtkwaliteit* in werkelijkheid *goed
 Bron:
 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
 """)
+
 
 
 
