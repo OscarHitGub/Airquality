@@ -265,7 +265,7 @@ if App_selection == "Training data":
         ax.set_title("Wind tegen luchtkwaliteit")
         ax.set_xlabel("Windkracht")
         ax.set_ylabel("Luchtkwaliteit (ppm)")
-        ax.set_legend()
+        ax.legend()
         
         st.pyplot(fig)
         
@@ -492,6 +492,7 @@ Ook hier kan een voorspelling van *matige luchtkwaliteit* in werkelijkheid *goed
 Bron:
 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
 """)
+
 
 
 
