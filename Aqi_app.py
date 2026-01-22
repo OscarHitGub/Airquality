@@ -254,16 +254,16 @@ if App_selection == "Training data":
             data_lucht["Windkracht"], 
             data_lucht["Air Quality (AQI) in ppm"], 
             alpha=0.4,
-            color="red"
+            color="navy"
         )
         ax.plot(
             data_lucht.groupby("Windkracht")["Air Quality (AQI) in ppm"].median(),
-            color="orange",
+            color="slategrey",
             label="Mediaan"
         )
         ax.plot(
             data_lucht.groupby("Windkracht")["Air Quality (AQI) in ppm"].mean(),
-            color="yellow",
+            color="slateblue",
             label="Gemiddelde"
         )
         
@@ -497,6 +497,7 @@ Ook hier kan een voorspelling van *matige luchtkwaliteit* in werkelijkheid *goed
 Bron:
 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
 """)
+
 
 
 
