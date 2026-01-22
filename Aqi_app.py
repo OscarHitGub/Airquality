@@ -316,8 +316,7 @@ if App_selection == "Training data":
         text_alignment="center",
         width="stretch"
     )
-    st.text("Bron voor temperatuur: https://www.mt-dashboard.nl/admin/d/xbR4dVq4z")
-    st.text("Bron voor regen en wind: https://www.knmi.nl/nederland-nu/klimatologie/daggegevens")
+    st.text("Bron voor temperatuur: https://www.mt-dashboard.nl/admin/d/xbR4dVq4z\nBron voor regen en wind: https://www.knmi.nl/nederland-nu/klimatologie/daggegevens")
 if App_selection == "Model omschrijving":
     st.markdown("""
 ## Modelbeschrijving – Gradient Boosting Regressor
@@ -518,6 +517,7 @@ Ook hier kan een voorspelling van *matige luchtkwaliteit* in werkelijkheid *goed
 Bron:
 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
 """)
+
 
 
 
