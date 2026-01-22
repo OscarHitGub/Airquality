@@ -220,7 +220,12 @@ if App_selection == "Training data":
     if scatterselect == "Temperatuur":
         fig, ax = plt.subplots()
         
-        ax.scatter(data_lucht["Luchttemperatuur in °C"], data_lucht["Air Quality (AQI) in ppm"], alpha=0.4)
+        ax.scatter(
+            data_lucht["Luchttemperatuur in °C"], 
+            data_lucht["Air Quality (AQI) in ppm"], 
+            alpha=0.4,
+            color="maroon"
+        )
         
         ax.set_title("Temperatuur tegen luchtkwaliteit")
         ax.set_xlabel("Temperatuur (°C)")
@@ -235,7 +240,12 @@ if App_selection == "Training data":
     if scatterselect == "Regen":
         fig, ax = plt.subplots()
         
-        ax.scatter(data_lucht["Hoeveelheid regen per dag in mm"], data_lucht["Air Quality (AQI) in ppm"], alpha=0.4)
+        ax.scatter(
+            data_lucht["Hoeveelheid regen per dag in mm"], 
+            data_lucht["Air Quality (AQI) in ppm"], 
+            alpha=0.4,
+            color="darkcyan"
+        )
         
         ax.set_title("Hoeveelheid regen per dag tegen luchtkwaliteit")
         ax.set_xlabel("Hoeveelheid regen per dag (mm)")
@@ -497,6 +507,7 @@ Ook hier kan een voorspelling van *matige luchtkwaliteit* in werkelijkheid *goed
 Bron:
 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
 """)
+
 
 
 
