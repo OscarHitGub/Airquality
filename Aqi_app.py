@@ -216,7 +216,7 @@ if App_selection == "Training data":
         "Selecteer data om te visualizeren:", 
         ("Temperatuur", "Regen", "Windkracht")
     )
-    if scatterselect = "Temperatuur":
+    if scatterselect == "Temperatuur":
         fig, ax = plt.subplots()
         
         ax.scatter(data_lucht["Luchttemperatuur in °C"], data_lucht["Air Quality (AQI) in ppm"], alpha=0.4)
@@ -469,4 +469,5 @@ Ook hier kan een voorspelling van *matige luchtkwaliteit* in werkelijkheid *goed
 Bron:
 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
 """)
+
 
