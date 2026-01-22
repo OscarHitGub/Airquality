@@ -212,6 +212,7 @@ if App_selection == "Luchtkwaliteit voorspellen":
     )
 
 if App_selection == "Training data":
+    st.set_page_config(layout="centered")
     scatterselect = st.radio(
         "Selecteer data om te visualizeren:", 
         ("Temperatuur", "Regen", "Windkracht")
@@ -230,25 +231,40 @@ if App_selection == "Training data":
         st.text(
             "Er is geen duidelijk verband zichtbaar tussen temperatuur en luchtkwaliteit. "
         )
+
+    if scatterselect == "Regen":
+        fig, ax = plt.subplots()
+        
+        ax.scatter(data_lucht["Hoeveelheid regen per dag in mm"], data_lucht["Air Quality (AQI) in ppm"], alpha=0.4)
+        
+        ax.set_title("Hoeveelheid regen per dag tegen luchtkwaliteit")
+        ax.set_xlabel("Hoeveelheid regen per dag (mm)")
+        ax.set_ylabel("Luchtkwaliteit (ppm)")
+        
+        st.pyplot(fig)
+        
+        st.text(
+            "Er is geen duidelijk verband zichtbaar tussen temperatuur en luchtkwaliteit. "
+        )
     
-    
-    fig, ax = plt.subplots()
-    
-    ax.scatter(data_lucht["Windkracht"], data_lucht["Air Quality (AQI) in ppm"], alpha=0.4)
-    ax.plot(
-        data_lucht.groupby("Windkracht")["Air Quality (AQI) in ppm"].mean(),
-        color="black"
-    )
-    
-    ax.set_title("Wind tegen luchtkwaliteit")
-    ax.set_xlabel("Windkracht")
-    ax.set_ylabel("Luchtkwaliteit (ppm)")
-    
-    st.pyplot(fig)
-    
-    st.caption(
-        "Bij een hogere windkracht is de luchtkwaliteit gemiddeld beter. "
-    )
+    if scatterselect == "Windkracht":
+        fig, ax = plt.subplots()
+        
+        ax.scatter(data_lucht["Windkracht"], data_lucht["Air Quality (AQI) in ppm"], alpha=0.4)
+        ax.plot(
+            data_lucht.groupby("Windkracht")["Air Quality (AQI) in ppm"].median(),
+            color="black"
+        )
+        
+        ax.set_title("Wind tegen luchtkwaliteit")
+        ax.set_xlabel("Windkracht")
+        ax.set_ylabel("Luchtkwaliteit (ppm)")
+        
+        st.pyplot(fig)
+        
+        st.caption(
+            "Bij een hogere windkracht is de luchtkwaliteit gemiddeld beter. "
+        )
     
     fig, ax = plt.subplots()
     
@@ -469,5 +485,6 @@ Ook hier kan een voorspelling van *matige luchtkwaliteit* in werkelijkheid *goed
 Bron:
 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
 """)
+
 
 
