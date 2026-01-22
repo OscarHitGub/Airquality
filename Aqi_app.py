@@ -250,15 +250,20 @@ if App_selection == "Training data":
     if scatterselect == "Windkracht":
         fig, ax = plt.subplots()
         
-        ax.scatter(data_lucht["Windkracht"], data_lucht["Air Quality (AQI) in ppm"], alpha=0.4)
+        ax.scatter(
+            data_lucht["Windkracht"], 
+            data_lucht["Air Quality (AQI) in ppm"], 
+            alpha=0.4,
+            color="red"
+        )
         ax.plot(
             data_lucht.groupby("Windkracht")["Air Quality (AQI) in ppm"].median(),
-            color="black",
+            color="orange",
             label="Mediaan"
         )
         ax.plot(
             data_lucht.groupby("Windkracht")["Air Quality (AQI) in ppm"].mean(),
-            color="black",
+            color="yellow",
             label="Gemiddelde"
         )
         
@@ -492,6 +497,7 @@ Ook hier kan een voorspelling van *matige luchtkwaliteit* in werkelijkheid *goed
 Bron:
 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
 """)
+
 
 
 
