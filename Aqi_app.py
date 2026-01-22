@@ -234,7 +234,7 @@ if App_selection == "Training data":
         st.pyplot(fig)
         
         st.text(
-            "Er is geen duidelijk verband zichtbaar tussen temperatuur en luchtkwaliteit. "
+            "Er is geen duidelijk verband zichtbaar tussen de temperatuur en de luchtkwaliteit."
         )
 
     if scatterselect == "Regen":
@@ -254,7 +254,7 @@ if App_selection == "Training data":
         st.pyplot(fig)
         
         st.text(
-            "Er is geen duidelijk verband zichtbaar tussen temperatuur en luchtkwaliteit. ",
+            "Er is geen duidelijk verband zichtbaar tussen hoeveelheid regen per dag en de luchtkwaliteit.",
             text_alignment="center"
         )
     
@@ -285,8 +285,8 @@ if App_selection == "Training data":
         
         st.pyplot(fig)
         
-        st.caption(
-            "Bij een hogere windkracht is de luchtkwaliteit gemiddeld beter. "
+        st.text(
+            "Bij een hogere windkracht is de luchtkwaliteit gemiddeld beter."
         )
     
     fig, ax = plt.subplots()
@@ -508,6 +508,7 @@ Ook hier kan een voorspelling van *matige luchtkwaliteit* in werkelijkheid *goed
 Bron:
 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
 """)
+
 
 
 
