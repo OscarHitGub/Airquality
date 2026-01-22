@@ -280,7 +280,8 @@ if App_selection == "Training data":
             color="slateblue",
             label="Gemiddelde"
         )
-        
+
+        ax.set_xticks((1,2,3,4,5))
         ax.set_title("Wind tegen luchtkwaliteit")
         ax.set_xlabel("Windkracht")
         ax.set_ylabel("Luchtkwaliteit (ppm)")
@@ -519,6 +520,7 @@ Ook hier kan een voorspelling van *matige luchtkwaliteit* in werkelijkheid *goed
 Bron:
 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
 """)
+
 
 
 
