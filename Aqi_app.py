@@ -212,19 +212,24 @@ if App_selection == "Luchtkwaliteit voorspellen":
     )
 
 if App_selection == "Training data":
-    fig, ax = plt.subplots()
-    
-    ax.scatter(data_lucht["Luchttemperatuur in °C"], data_lucht["Air Quality (AQI) in ppm"], alpha=0.4)
-    
-    ax.set_title("Temperatuur tegen luchtkwaliteit")
-    ax.set_xlabel("Temperatuur (°C)")
-    ax.set_ylabel("Luchtkwaliteit (ppm)")
-    
-    st.pyplot(fig)
-    
-    st.text(
-        "Er is geen duidelijk verband zichtbaar tussen temperatuur en luchtkwaliteit. "
+    scatterselect = st.radio(
+        "Selecteer data om te visualizeren:", 
+        ("Temperatuur", "Regen", "Windkracht")
     )
+    if scatterselect = "Temperatuur":
+        fig, ax = plt.subplots()
+        
+        ax.scatter(data_lucht["Luchttemperatuur in °C"], data_lucht["Air Quality (AQI) in ppm"], alpha=0.4)
+        
+        ax.set_title("Temperatuur tegen luchtkwaliteit")
+        ax.set_xlabel("Temperatuur (°C)")
+        ax.set_ylabel("Luchtkwaliteit (ppm)")
+        
+        st.pyplot(fig)
+        
+        st.text(
+            "Er is geen duidelijk verband zichtbaar tussen temperatuur en luchtkwaliteit. "
+        )
     
     
     fig, ax = plt.subplots()
@@ -464,3 +469,4 @@ Ook hier kan een voorspelling van *matige luchtkwaliteit* in werkelijkheid *goed
 Bron:
 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html
 """)
+
